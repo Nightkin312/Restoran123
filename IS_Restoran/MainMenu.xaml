@@ -1,0 +1,40 @@
+﻿<Window x:Class="IS_Restoran.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IS_Restoran"
+        mc:Ignorable="d"
+        Title="Главное меню" Height="300" Width="200" Closed="Window_Closed">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="5"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+            <RowDefinition/>
+            <RowDefinition Height="5"/>
+        </Grid.RowDefinitions>
+        <Button x:Name="Admin" Content="Администратор" Grid.Column="1" Grid.Row="1" Click="Admin_Click"/>
+        <Button x:Name="SklRab" Content="Склад" Grid.Column="1" Grid.Row="3" Click="SklRab_Click"/>
+        <Button x:Name="KadrRab" Content="Отдел кадров" Grid.Column="1" Grid.Row="5" Click="KadrRab_Click"/>
+        <Button x:Name="Shef" Content="Кухня" Grid.Column="1" Grid.Row="7" Click="Shef_Click"/>
+        <Button x:Name="Buhg" Content="Бухгалтерия" Grid.Column="1" Grid.Row="9" Click="Buhg_Click"/>
+        <Button x:Name="Ofic" Content="Обслуживание клиентов" Grid.Column="1" Grid.Row="11" Click="Ofic_Click"/>
+        <Button x:Name="ZalAdmin" Content="Обслуживание зала" Grid.Column="1" Grid.Row="13" Click="ZalAdmin_Click"/>
+    </Grid>
+</Window>

@@ -1,0 +1,390 @@
+﻿<Window x:Class="IS_Restoran.ZalAdminForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IS_Restoran"
+        mc:Ignorable="d"
+        Title="Обслуживание зала" Height="700" Width="900" x:Name="ZalAdminForm1" Loaded="ZalAdminForm1_Loaded">
+    <Grid>
+        <TabControl>
+            <TabItem x:Name="Stol">
+                <TabItem.Header>
+                    <Label Content="Стол"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Статус стола" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="Ststus_stol"/>
+                        <Label Content="Номер стола" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="5" x:Name="Nomer_stol"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="StolTbl" SelectionChanged="StolTbl_SelectionChanged"/>
+                        <Button x:Name="AddStol" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddStol_Click"/>
+                        <Button x:Name="UpdStol" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdStol_Click"/>
+                        <Button x:Name="DelStol" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelStol_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Klient">
+                <TabItem.Header>
+                    <Label Content="Клиент"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Имя клиента" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="Fam_Kl"/>
+                        <Label Content="Фамилия клиента" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="5" x:Name="Im_Kl"/>
+                        <Label Content="Отчество клиента" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="8" x:Name="Otch_Kl"/>
+                        <Label Content="Заказ" Grid.Column="5" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <DatePicker Grid.Column="5" Grid.Row="11" x:Name="Date_vnes"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="KlientTbl" SelectionChanged="KlientTbl_SelectionChanged"/>
+                        <Button x:Name="AddKlient" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddKlient_Click"/>
+                        <Button x:Name="UpdKlient" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdKlient_Click"/>
+                        <Button x:Name="DelKlient" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelKlient_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Bron">
+                <TabItem.Header>
+                    <Label Content="Бронь"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Дата брони" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <DatePicker Grid.Column="5" Grid.Row="2" x:Name="Date_Bron"/>
+                        <Label Content="Стол" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="5" x:Name="ID_StolFKBron" DropDownOpened="ID_StolFKBron_DropDownOpened"/>
+                        <Label Content="Клиент" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="8" x:Name="ID_KlientFKBron" DropDownOpened="ID_KlientFKBron_DropDownOpened"/>
+                        <Label Content="Сотрудник" Grid.Column="5" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="11" x:Name="ID_SotrFKBron" DropDownOpened="ID_SotrFKBron_DropDownOpened"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="BronTbl" SelectionChanged="BronTbl_SelectionChanged"/>
+                        <Button x:Name="AddBron" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddBron_Click"/>
+                        <Button x:Name="UpdBron" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdBron_Click"/>
+                        <Button x:Name="DelBron" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelBron_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Straf">
+                <TabItem.Header>
+                    <Label Content="Штраф"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Сумма штрафа" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="Summ_Shtraf"/>
+                        <Label Content="Ущерб" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="5" x:Name="Usherb"/>
+                        <Label Content="Клиент" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="8" x:Name="ID_KlientFKStraf" DropDownOpened="ID_KlientFKStraf_DropDownOpened"/>
+                        <Label Content="Сотрудник" Grid.Column="5" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="11" x:Name="ID_SotrFKStraf" DropDownOpened="ID_SotrFKStraf_DropDownOpened"/>
+                        <Label Content="Мебель" Grid.Column="5" Grid.Row="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="14" x:Name="ID_MebelFKStraf" DropDownOpened="ID_MebelFKStraf_DropDownOpened"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="StrafTbl" SelectionChanged="StrafTbl_SelectionChanged"/>
+                        <Button x:Name="AddStraf" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddStraf_Click"/>
+                        <Button x:Name="UpdStraf" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdStraf_Click"/>
+                        <Button x:Name="DelStraf" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelStraf_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Mebel">
+                <TabItem.Header>
+                    <Label Content="Мебель"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Назавние мебели" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="Name_mebel"/>
+                        <Label Content="Номер мебели" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="5" x:Name="Nomer_mebel"/>
+                        <Label Content="Состояние мебели" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="8" x:Name="Sost_mebel"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="MebelTbl" SelectionChanged="MebelTbl_SelectionChanged"/>
+                        <Button x:Name="AddMebel" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddMebel_Click"/>
+                        <Button x:Name="UpdMebel" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdMebel_Click"/>
+                        <Button x:Name="DelMebel" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelMebel_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Spisanie">
+                <TabItem.Header>
+                    <Label Content="Списание"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="213*"/>
+                            <ColumnDefinition Width="196*"/>
+                            <ColumnDefinition Width="18*"/>
+                            <ColumnDefinition Width="213*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="213*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Описание повреждений" Grid.Column="6" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="35,6,34,7"/>
+                        <TextBox Grid.Column="6" Grid.Row="2" x:Name="Povregd"/>
+                        <Label Content="Номер списания" Grid.Column="6" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="55,6,56,7"/>
+                        <TextBox Grid.Column="6" Grid.Row="5" x:Name="Nomer_spis"/>
+                        <Label Content="Сотрудник" Grid.Column="6" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="72,6,72,7"/>
+                        <ComboBox Grid.Column="6" Grid.Row="8" x:Name="ID_SotrFKSpis" DropDownOpened="ID_SotrFKSpis_DropDownOpened"/>
+                        <Label Content="Мебель" Grid.Column="6" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="80,6,80,7"/>
+                        <ComboBox Grid.Column="6" Grid.Row="11" x:Name="ID_MebelFKSpis" DropDownOpened="ID_MebelFKSpis_DropDownOpened"/>
+
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="18" x:Name="SpisanieTbl" SelectionChanged="SpisanieTbl_SelectionChanged"/>
+                        <Button x:Name="AddSpisanie" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddSpisanie_Click"/>
+                        <Button x:Name="UpdSpisanie" Content="Изменить" Grid.Row="20" Grid.Column="2" Grid.ColumnSpan="2" Click="UpdSpisanie_Click"/>
+                        <Button x:Name="DelSpisanie" Content="Удалить" Grid.Row="20" Grid.Column="4" Click="DelSpisanie_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Zamena">
+                <TabItem.Header>
+                    <Label Content="Замена"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="213*"/>
+                            <ColumnDefinition Width="116*"/>
+                            <ColumnDefinition Width="97*"/>
+                            <ColumnDefinition Width="213*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="213*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Причина замены" Grid.Column="6" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="55,6,54,7"/>
+                        <TextBox Grid.Column="6" Grid.Row="2" x:Name="Prichina"/>
+                        <Label Content="Номер замены" Grid.Column="6" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="61,6,60,7"/>
+                        <TextBox Grid.Column="6" Grid.Row="5" x:Name="Nomer_zamena"/>
+                        <Label Content="Сотрудник" Grid.Column="6" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="72,6,72,7"/>
+                        <ComboBox Grid.Column="6" Grid.Row="8" x:Name="ID_SotrFKZamena" DropDownOpened="ID_SotrFKZamena_DropDownOpened"/>
+                        <Label Content="Списание" Grid.Column="6" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="75,6,75,7"/>
+                        <ComboBox Grid.Column="6" Grid.Row="11" x:Name="ID_SpisanieFKZamena" DropDownOpened="ID_SpisanieFKZamena_DropDownOpened"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="1" Grid.RowSpan="18" x:Name="ZamenaTbl" SelectionChanged="ZamenaTbl_SelectionChanged"/>
+                        <Button x:Name="AddZamena" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddZamena_Click"/>
+                        <Button x:Name="UpdZamena" Content="Изменить" Grid.Row="20" Grid.Column="2" Grid.ColumnSpan="2" Click="UpdZamena_Click"/>
+                        <Button x:Name="DelZamena" Content="Удалить" Grid.Row="20" Grid.Column="4" Click="DelZamena_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

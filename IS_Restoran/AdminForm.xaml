@@ -1,0 +1,150 @@
+﻿<Window x:Class="IS_Restoran.AdminForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IS_Restoran"
+        mc:Ignorable="d"
+        Title="Администратор" Height="700" Width="900" Loaded="Window_Loaded">
+    <Grid>
+        <TabControl>
+            <TabItem x:Name="UsersSpr">
+                <TabItem.Header>
+                    <Label Content="Пользователи"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            
+                        </Grid.RowDefinitions>
+                        <DataGrid Grid.Column="1" Grid.Row="1" Grid.RowSpan="25" Grid.ColumnSpan="3" x:Name="UsersTbl" IsReadOnly="True" SelectionMode="Single" SelectionChanged="UsersTbl_SelectionChanged"/>
+                        <Button Content="Добавить" Grid.Column="1" Grid.Row="27" x:Name="AddUser" Click="AddUser_Click"/>
+                        <Button Content="Изменить" Grid.Column="2" Grid.Row="27" x:Name="UpdUser" Click="UpdUser_Click"/>
+                        <Button Content="Удалить" Grid.Column="3" Grid.Row="27" x:Name="DelUser" Click="DelUser_Click"/>
+                        <Label Content="Логин" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label Content="Пароль" Grid.Column="5" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label Content="Роль" Grid.Column="5" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="3" x:Name="Login"/>
+                        <TextBox Grid.Column="5" Grid.Row="7" x:Name="Pass"/>
+                        <ComboBox Grid.Column="5" Grid.Row="11" x:Name="Roll" DropDownOpened="Roll_DropDownOpened"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="RollSpr">
+                    <TabItem.Header>
+                        <Label Content="Роли"/>
+                    </TabItem.Header>
+                    <TabItem.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="10"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="10"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                <RowDefinition/>
+                                <RowDefinition Height="10"/>
+                                
+                            </Grid.RowDefinitions>
+                        <DataGrid Grid.Column="1" Grid.Row="1" Grid.RowSpan="31" Grid.ColumnSpan="3" x:Name="RollTbl" IsReadOnly="True" SelectionMode="Single"  SelectionChanged="RollTbl_SelectionChanged"/>
+                            <Button Content="Добавить" Grid.Column="1" Grid.Row="33" x:Name="AddRoll" Click="AddRoll_Click" />
+                            <Button Content="Изменить" Grid.Column="2" Grid.Row="33" x:Name="UpdRoll" Click="UpdRoll_Click"/>
+                        <Button Content="Удалить" Grid.Column="3" Grid.Row="33" x:Name="DelRoll" Click="DelRoll_Click"/>
+                            
+                        <Label Content="Права администратора" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Label Content="Права складского рабочего" Grid.Column="5" Grid.Row="5" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Label Content="Права кадрового сотрудника" Grid.Column="5" Grid.Row="9" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Label Content="Права шеф-повара" Grid.Column="5" Grid.Row="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Label Content="Права бухгалтера" Grid.Column="5" Grid.Row="17" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <Label Content="Права официанта" Grid.Column="5" Grid.Row="21" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label Content="Права администратора зала" Grid.Column="5" Grid.Row="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <Label Content="Название роли" Grid.Column="5" Grid.Row="29" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="31" x:Name="RollName"/>
+                            <CheckBox Grid.Column="5" Grid.Row="3" x:Name="AdminPrava" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <CheckBox Grid.Column="5" Grid.Row="7" x:Name="SklPrava" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <CheckBox Grid.Column="5" Grid.Row="11" x:Name="KadrPrava" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <CheckBox Grid.Column="5" Grid.Row="15" x:Name="ShefPrava" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <CheckBox Grid.Column="5" Grid.Row="19" x:Name="BuhgPrava" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <CheckBox Grid.Column="5" Grid.Row="23" x:Name="OficPrava" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            <CheckBox Grid.Column="5" Grid.Row="27" x:Name="ZalAdminPrava" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Grid>
+                    </TabItem.Content>
+                </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

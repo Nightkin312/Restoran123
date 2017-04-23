@@ -1,0 +1,385 @@
+﻿<Window x:Class="IS_Restoran.SklRabForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:IS_Restoran"
+        mc:Ignorable="d"
+        Title="Склад" Height="700" Width="900" Loaded="Window_Loaded" x:Name="SklRabForm1">
+    <Grid>
+        <TabControl x:Name="SklRab">
+            <TabItem x:Name="PostavshikSklRab">
+                <TabItem.Header>
+                    <Label Content="Поставщики"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Наиминование поставщика" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="Naim_PostSklRab"/>
+                        <Label Content="Адрес поставщика" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="5" x:Name="AdresSklRab"/>
+                        <Label Content="Телефон поставщика" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="8" x:Name="TelefonSklRab" UndoLimit="11"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="PostavshikTblSklRab" IsReadOnly="True" SelectionMode="Single" SelectionChanged="PostavshikTblSklRab_SelectionChanged"/>
+                        <Button x:Name="AddPostSklRab" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddPostSklRab_Click"/>
+                        <Button x:Name="UpdPostSklRab" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdPostSklRab_Click"/>
+                        <Button x:Name="DelPostSklRab" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelPostSklRab_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="TovarSklRab">
+                <TabItem.Header>
+                    <Label Content="Товары"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Количество на складе" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="Kolvo_na_skladSklRab"/>
+                        <Label Content="Название товара" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="5" x:Name="Name_tovaraSklRab"/>
+                        <Label Content="Цена" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="8" x:Name="Cena_tovaraSklRab"/>
+                        <Label Content="Характеристики" Grid.Column="5" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="11" x:Name="HaracterSklRab"/>
+                        <Label Content="Поставщик " Grid.Column="5" Grid.Row="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="14" x:Name="ID_PostavshikFKTovarSklRab" DropDownOpened="ID_PostavshikFKTovarSklRab_DropDownOpened"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="TovarTblSklRab" IsReadOnly="True" SelectionMode="Single" SelectionChanged="TovarTblSklRab_SelectionChanged"/>
+                        <Button x:Name="AddTovarSklRab" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddTovarSklRab_Click"/>
+                        <Button x:Name="UpdTovarSklRab" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdTovarSklRab_Click"/>
+                        <Button x:Name="DelTovarSklRab" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelTovarSklRab_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Tov_na_sklSklRab">
+                <TabItem.Header>
+                    <Label Content="Товары на складе"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Товар" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="2" x:Name="ID_TovarFKTov_na_sklSklRab" DropDownOpened="ID_TovarFKTov_na_sklSklRab_DropDownOpened"/>
+                        <Label Content="Продукт на складе" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="5" x:Name="ID_ProductFKTov_na_sklSklRab" DropDownOpened="ID_ProductFKTov_na_sklSklRab_DropDownOpened"/>
+                        <Label Content="Количество" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="8" x:Name="KolvoSklRab"/>
+                        <Button x:Name="AddTovar_na_skladeSklRab" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddTovar_na_skladeSklRab_Click"/>
+                        <Button x:Name="UpdTovar_na_skladeSklRab" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdTovar_na_skladeSklRab_Click"/>
+                        <Button x:Name="DelTovar_na_skladeSklRab" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelTovar_na_skladeSklRab_Click"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="Tovar_na_skaldeTblSklRab" IsReadOnly="True" SelectionMode="Single" SelectionChanged="Tovar_na_skaldeTblSklRab_SelectionChanged"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Sklad_producktSklRab">
+                <TabItem.Header>
+                    <Label Content="Список продуктов"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Название продукта" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="Name_productSklRab"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="Sklad_producktTblSklRab" IsReadOnly="True" SelectionMode="Single" SelectionChanged="Sklad_producktTblSklRab_SelectionChanged"/>
+                        <Button x:Name="AddSklad_producktSklRab" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddSklad_producktSklRab_Click"/>
+                        <Button x:Name="UpdSklad_producktSklRab" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdSklad_producktSklRab_Click"/>
+                        <Button x:Name="DelSklad_producktSklRab" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelSklad_producktSklRab_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Dog_s_postSklRab">
+                <TabItem.Header>
+                    <Label Content="Договора"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Номер договора" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="Nomer_dogovoraSklRab"/>
+                        <Label Content="Название договора" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="5" x:Name="Nazvanie_dogovoraSklRab"/>
+                        <Label Content="Поставщик" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="8" x:Name="ID_PostavshikFKDog_s_postSklRab" DropDownOpened="ID_PostavshikFKDog_s_postSklRab_DropDownOpened"/>
+                        <Label Content="Дата заключения" Grid.Column="5" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <DatePicker Grid.Column="5" Grid.Row="11" x:Name="Date_zakluchSklRab"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="Dog_s_postTblSklRab" IsReadOnly="True" SelectionMode="Single" SelectionChanged="Dog_s_postTblSklRab_SelectionChanged"/>
+                        <Button x:Name="AddDog_s_postSklRab" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddDog_s_postSklRab_Click"/>
+                        <Button x:Name="UpdDog_s_postSklRab" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdDog_s_postSklRab_Click"/>
+                        <Button x:Name="DelDog_s_postSklRab" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelDog_s_postSklRab_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Zakaz_tovSklRab">
+                <TabItem.Header>
+                    <Label Content="Заказ"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Номер заказа" Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="Nomer_zakaza_prodSklRab"/>
+                        <Label Content="Дата заказа" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <DatePicker Grid.Column="5" Grid.Row="5" x:Name="Date_zakazaSklRab"/>
+                        <Label Content="Договор с поставщиком" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="8" x:Name="ID_Dog_s_postFKZak_tovSklRab" DropDownOpened="ID_Dog_s_postFKZak_tovSklRab_DropDownOpened"/>
+                        <Label Content="Сотрудник" Grid.Column="5" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="11" x:Name="ID_SotrFKZak_tovSklRab" DropDownOpened="ID_SotrFKZak_tovSklRab_DropDownOpened"/>
+                        <Label Content="Сумма заказа" Grid.Column="5" Grid.Row="13" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="14" x:Name="Summa_zakazaSklRab"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="Zakaz_tovaraTblSklRab" IsReadOnly="True" SelectionMode="Single" SelectionChanged="Zakaz_tovaraTblSklRab_SelectionChanged"/>
+                        <Button x:Name="AddZakaz_tovaraSklRab" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddZakaz_tovaraSklRab_Click"/>
+                        <Button x:Name="UpdZakaz_tovaraSklRab" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdZakaz_tovaraSklRab_Click"/>
+                        <Button x:Name="DelZakaz_tovaraSklRab" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelZakaz_tovaraSklRab_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+            <TabItem x:Name="Sost_zak_prodSklRab">
+                <TabItem.Header>
+                    <Label Content="Состав заказа продуктов"/>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="10"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="10"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition Height="10"/>
+                        </Grid.RowDefinitions>
+                        <Label Content="Количество " Grid.Column="5" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="2" x:Name="KolvoTovaraSklRab"/>
+                        <Label Content="Название товара" Grid.Column="5" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <TextBox Grid.Column="5" Grid.Row="5" x:Name="Name_tovarSklRab"/>
+                        <Label Content="Заказ" Grid.Column="5" Grid.Row="7" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="8" x:Name="Zakaz_tovaraFKSost_zak_tovSklRab" DropDownOpened="Zakaz_tovaraFKSost_zak_tovSklRab_DropDownOpened"/>
+                        <Label Content="Товар на складе" Grid.Column="5" Grid.Row="10" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        <ComboBox Grid.Column="5" Grid.Row="11" x:Name="Tovar_na_skaldeFKSost_zak_tovSklRab" DropDownOpened="Tovar_na_skaldeFKSost_zak_tovSklRab_DropDownOpened"/>
+                        <DataGrid Grid.Column="1" Grid.ColumnSpan="3" Grid.Row="1" Grid.RowSpan="18" x:Name="Sost_zakaza_productovTblSklRab" IsReadOnly="True" SelectionMode="Single" SelectionChanged="Sost_zakaza_productovTblSklRab_SelectionChanged"/>
+                        <Button x:Name="AddSost_zakaza_productovSklRab" Content="Добавить" Grid.Row="20" Grid.Column="1" Click="AddSost_zakaza_productovSklRab_Click"/>
+                        <Button x:Name="UpdSost_zakaza_productovSklRab" Content="Изменить" Grid.Row="20" Grid.Column="2" Click="UpdSost_zakaza_productovSklRab_Click"/>
+                        <Button x:Name="DelSost_zakaza_productovSklRab" Content="Удалить" Grid.Row="20" Grid.Column="3" Click="DelSost_zakaza_productovSklRab_Click"/>
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+        </TabControl>    
+    </Grid>
+</Window>
